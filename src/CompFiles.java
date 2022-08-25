@@ -7,7 +7,7 @@ import java.io.*;
 
 public class CompFiles {
     public static void main(String[] args) {
-        int i = 0, j =0, k = 1;
+        int i, j , k = 1;
 
         //makes sure that two filenames are given
         if(args.length != 2) {
@@ -25,7 +25,7 @@ public class CompFiles {
                     System.out.println("Pliki ró¿ni¹ siê w miejscu " + k + " znaku.");
                     break;
                 }
-                k = k +1;
+                k++;
             } while(i != -1 && j != -1);
 
             if(i != j) System.out.println("Porównywane pliki s¹ ró¿ne.");
