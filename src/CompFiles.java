@@ -25,7 +25,7 @@ public class CompFiles {
                     System.out.println("Pliki ró¿ni¹ siê w miejscu " + k + " znaku.");
                     break;
                 }
-                k++;
+                k = k +1;
             } while(i != -1 && j != -1);
 
             if(i != j) System.out.println("Porównywane pliki s¹ ró¿ne.");
