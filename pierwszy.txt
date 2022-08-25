@@ -1,0 +1,33 @@
+/*
+Comparing two files
+
+Running this program specify in the command line names of comparing files
+ */
+import java.io.*;
+
+public class CompFiles {
+    public static void main(String[] args) {
+        int i = 0, j =0;
+
+        //makes sure that two filenames are given
+        if(args.length != 2) {
+            System.out.println("Do prawidłowego uruchomienia wymagane jest podanie dwóch nazw plików");
+            return;
+        }
+        //Comparing the files
+        try(FileInputStream f1 = new FileInputStream(args[0]);
+            FileInputStream f2 = new FileInputStream(args[1])) {
+            //checking of content od both files
+            do {
+                i = f1.read();
+                j = f2.read();
+                if(i != j) break;
+            } while(i != -1 && j != -1);
+
+            if(i != j) System.out.println("Porównywane pliki są różne.");
+            else System.out.println("Porównywane pliki są identyczne.");
+        }catch (IOException exc) {
+            System.out.println("Błąd wejścia/wyjścia: " + exc);
+        }
+    }
+}
